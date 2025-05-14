@@ -225,7 +225,7 @@ func (m *memoryController) Update(path string, resources *specs.LinuxResources) 
 			return err
 		}
 		if current < uint64(*resources.Memory.Swap) {
-			settings[0], settings[1] = settings[1], settings[0]
+			settings[0], settings[2] = settings[2], settings[0]
 		}
 	}
 	return m.set(path, settings)
